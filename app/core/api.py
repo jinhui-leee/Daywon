@@ -23,5 +23,7 @@ def util_api(api_key, model, system_prompt, user_prompt):
 
 
 def get_api_key():
-    api_key = os.getenv('OPENAI_API_KEY')  # 환경변수 이름
+    api_key = os.getenv("OPENAI_API_KEY")
+    if api_key is None:
+        raise ValueError("API key is not set")
     return api_key
