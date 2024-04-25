@@ -26,7 +26,7 @@ class VideoCreator:
         """저장할 비디오 파일의 이름을 중복되지 않게 생성"""
         count = 1
         while True:
-            video_path = f"./video/{self.video_name}_{count}.mp4"
+            video_path = f"./completed_video/{self.video_name}_{count}.mp4"
             if not os.path.exists(video_path):
                 return video_path
             count += 1
