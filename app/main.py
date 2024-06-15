@@ -298,7 +298,7 @@ def get_profile_image(user_id: int, db: Session = Depends(get_db)):
 
 
 @app.get("/get_user_history/{user_id}")
-async def get_user__history(user_id: int, T_F: bool, db: Session = Depends(get_db)):
+async def get_user_history(user_id: int, T_F: bool, db: Session = Depends(get_db)):
     user_history = crud.get_user_history(db, user_id=user_id, T_F=T_F)
     if not user_history:
         raise HTTPException(status_code=404, detail="User history not found")
