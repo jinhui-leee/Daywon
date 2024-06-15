@@ -283,7 +283,7 @@ async def create_user_history(user_id: int, script_id: int, T_F: bool, db: Sessi
     return {"success"}
 
 
-@app.put("/user_update_history/{user_id}")
+@app.put("/user_update_history/{user_id}/{scripts_id}")
 async def update_user_history(user_id: int, scripts_id: int, T_F: bool, db: Session = Depends(get_db)):
     crud.update_user_history(db, user_id=user_id, script_id=scripts_id, T_F=T_F)
     return {"success"}
